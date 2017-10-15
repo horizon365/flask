@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}Flasky{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>自动构建容器简易版</h1>
+</div>
+{% for i in result %}
+<li>{{ i }}</li>
+{% endfor %}
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+    <script language="javascript">
+setTimeout("self.location.reload();",1000);
+</script>
+{% endblock %}

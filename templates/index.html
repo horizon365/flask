@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ url_for('static', filename='bootstrap.min.js', _external=True) }}"></script>
+{% endblock %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+<link href="{{ url_for('static', filename= 'bootstrap.min.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!</h1>
+</div>
+{{ wtf.quick_form(form) }}
+{% endblock %}
